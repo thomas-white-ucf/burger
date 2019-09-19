@@ -10,13 +10,21 @@ let keys = require('../assets/js/keys');
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: keys.databaseKey,
-  database: "burgers_db"
-});
+var connection;
+
+// connect with JAWS_URL or connect with local port
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+      host: "localhost",
+      port: 3306,
+      user: "root",
+      password: keys.databaseKey,
+      database: "burgers_db"
+    });
+};
+
 
 // Make connection.
 connection.connect(function(err) {

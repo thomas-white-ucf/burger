@@ -1,5 +1,14 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-// $(function() {
+$(function() {
+
+
+  // CODE
+
+  
+});
+
+
+
 //   $(".change-sleep").on("click", function(event) {
 //     var id = $(this).data("id");
 //     var newSleep = $(this).data("newsleep");
@@ -42,4 +51,4 @@
 //       }
 //     );
 //   });
-// });
+
