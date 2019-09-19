@@ -1,26 +1,25 @@
-var express = require("express");
+var express = require('express');
 
 var router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
-var burger = require("../models/burger.js");
+var burger = require('../models/burger.js');
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
-      var hbsObject = {
-        burgers: data
-      };
-      console.log("router log > hbsObject {burgers: data} == ", hbsObject);
-      res.render("index", hbsObject);
-    });
-  });
-  
+router.get('/', function(req, res) {
+	burger.selectAll(function(data) {
+		var hbsObject = {
+			burgers: data
+		};
 
-  // THEN EXPORT ROUTER
+		console.log('router log > hbsObject {burgers: data} == ', hbsObject);
 
+		// HANDLEBAR INDEX  > res.render > index
+		res.render('index', hbsObject);
+	});
+});
 
-
+// THEN EXPORT ROUTER
 
 //   router.delete("/api/burgers", function(req, res) {
 //     burger.delete([
@@ -32,7 +31,7 @@ router.get("/", function(req, res) {
 //       res.json({ id: result.insertId });
 //     });
 //   });
-  
+
 //   router.post("/api/burgers", function(req, res) {
 //     burger.create([
 //       "name", "sleepy"
@@ -43,12 +42,12 @@ router.get("/", function(req, res) {
 //       res.json({ id: result.insertId });
 //     });
 //   });
-  
+
 //   router.put("/api/burgers/:id", function(req, res) {
 //     var condition = "id = " + req.params.id;
-  
+
 //     console.log("condition", condition);
-  
+
 //     burger.update({
 //       sleepy: req.body.sleepy
 //     }, condition, function(result) {
@@ -60,6 +59,6 @@ router.get("/", function(req, res) {
 //       }
 //     });
 //   });
-  
-  // Export routes for server.js to use.
-  module.exports = router;
+
+// Export routes for server.js to use.
+module.exports = router;
