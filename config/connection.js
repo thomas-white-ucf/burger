@@ -5,7 +5,7 @@ require('dotenv').config();
 // ==+==================+==
 
 // Require Files & Packages, store as variables
-let keys = require('../assets/js/keys');
+// let keys = require('../assets/js/keys');
 
 // Set up MySQL connection.
 var mysql = require("mysql");
@@ -19,8 +19,8 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection({
       host: "localhost",
       port: 3306,
-      user: "root",
-      password: keys.databaseKey,
+      user: "root	",
+      password: "SQLsetpass774$",
       database: "burgers_db"
     });
 };
