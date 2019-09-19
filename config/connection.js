@@ -5,7 +5,7 @@ require('dotenv').config();
 // ==+==================+==
 
 // Require Files & Packages, store as variables
-let keys = require('../assets/js/keys');
+// let keys = require('../assets/js/keys');
 
 // Set up MySQL connection.
 var mysql = require("mysql");
@@ -16,11 +16,11 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
-      host: "localhost",
-      // port: 3306,
-      user: "root	",
-      password: keys.databaseKey,
-      database: "burgers_db"
+      host: "s9xpbd61ok2i7drv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      port: 3306,
+      user: "aowcs1a2yat0yj51	",
+      password: "h5krgzjv0lg5l90s",
+      database: "gjd67ipwisqsrdfk"
     });
 };
 
